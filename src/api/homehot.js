@@ -4,11 +4,11 @@ import {
 } from '../utils/http'
 
 const homehot = {
-	homehot1Data() {
-		return getData(base.homehot1)
+	homehot1Data(city) {
+		return getData(base.homehot1 + "?city=" + city)
 	},
-	homehot2Data() {
-		return getData(base.homehot2)
+	homehot2Data(city) {
+		return getData(base.homehot2 + "?city=" + city)
 	}
 }
 export default homehot

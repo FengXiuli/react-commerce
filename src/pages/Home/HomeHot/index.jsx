@@ -12,7 +12,9 @@ export default class Home extends React.Component{
 	}
 
 	componentDidMount() {
-		api.homehot.homehot1Data()
+		// 获取城市，传递参数
+		const city = localStorage.getItem('city')
+		api.homehot.homehot1Data(city)
 		.then(res => res.json())
 		.then(data => {
 			this.setState({
@@ -20,7 +22,7 @@ export default class Home extends React.Component{
 			})
 		})
 
-		api.homehot.homehot2Data()
+		api.homehot.homehot2Data(city)
 		.then(res => res.json())
 		.then(data => {
 			this.setState({

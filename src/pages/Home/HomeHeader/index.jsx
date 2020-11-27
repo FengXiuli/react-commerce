@@ -1,12 +1,17 @@
 import React from 'react'
 import './style.less'
+import { Link } from 'react-router-dom'
+import SearchInput from '../../../components/SearchInput'
 
 export default class HomeHeader extends React.Component {
 	 render() {
+        const history = this.props.history
         return (
             <div id="home-header" className="clear-fix">
                 <div className="home-header-left float-left">
-                    <span>北京</span>
+                    <Link to="/city">
+                       <span>{ this.props.city }</span>
+                    </Link>
                     <i className="icon-angle-down"></i>
                 </div>
                 <div className="home-header-right float-right">
@@ -15,7 +20,7 @@ export default class HomeHeader extends React.Component {
                 <div className="home-header-middle">
                     <div className="search-container">
                         <i className="icon-search"></i>
-                        <input />
+                        <SearchInput history={ history }/>
                     </div>
                 </div>
             </div>
